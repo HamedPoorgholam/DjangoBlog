@@ -1,3 +1,4 @@
+from audioop import reverse
 import imp
 import django
 from django.shortcuts import render
@@ -8,4 +9,4 @@ from django.http import HttpResponse
 
 def test(request):
 
-    return HttpResponse("<h1> this is a test </h2>")
+    return render(request, "blog/home.html")
