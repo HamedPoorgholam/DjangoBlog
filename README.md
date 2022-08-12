@@ -32,4 +32,4 @@
 
 
 <h3>• And this is how our admin pannel looks like </h3>
-<img src="screensAnd this is how our admin pannel looks like '>
+<img src="screenshots/11.png" width='1200' heigth='650'>
