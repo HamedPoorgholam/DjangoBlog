@@ -21,9 +21,15 @@
 <img src="screenshots/5.png" width='1200' heigth='650'>
 <img src="screenshots/6.png" width='1200' heigth='650'>
 <img src="screenshots/7.png" width='1200' heigth='650'>
-
 <img src="screenshots/8.png" width='1200' heigth='650'>
 
+<h3>• And we can logout every time we want</h3>
+<h4> django.auth has bilt-in LoginView and LougoutView classes that with seting url and making templete for them we can use their functionality.</h4>
 <img src="screenshots/9.png" width='1200' heigth='650'>
+
+<h3>• We have some pagination for our pages</h3>
 <img src="screenshots/10.png" width='1200' heigth='650'>
-<img src="screenshots/11.png" width='1200' heigth='650'>
+
+
+<h3>• And this is how our admin pannel looks like </h3>
+<img src="screensAnd this is how our admin pannel looks like '>
