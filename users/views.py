@@ -4,7 +4,8 @@ from tkinter.tix import Form
 from urllib import request
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
-from .forms import FormRegister
+from .forms import FormRegister, UserUpdateForm, ProfileUpdateForm
+from .models import Profile
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -30,4 +31,21 @@ def register(request):
     
 @login_required
 def profile(request):
-    return render(request,'users/profile.html')    
+
+    if request.method == 'POST':
+        u_form = UserUpdateForm(request.POST, instance=request.user)
+        p_form = ProfileUpdateForm(request.POST, request.FILES ,instance=request.user.profile)
+
+        if u_form.is_valid() and p_form.is_valid():
+           u_form.save()
+           p_form.save()
+           return redirect('profile') 
+    else:
+        u_form = UserUpdateForm(instance=request.user)
+        p_form = ProfileUpdateForm(instance=request.user.profile)
+
+    context = {
+        'u_form': u_form,
+        'p_form': p_form
+    }    
+    return render(request,'users/profile.html', context)    
